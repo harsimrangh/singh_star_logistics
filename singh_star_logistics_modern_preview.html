@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Singh Star Logistics Ltd</title>
+  <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f5f7fa;
+  color:#222;
+  line-height:1.6;
+}
+
+
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  height:90px;
+  background:linear-gradient(90deg, #061422, #0b3a66);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding:0 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 3px 12px rgba(0,0,0,0.25);
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  transition:0.3s;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:#4da3ff;
+}
+
+.logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  height:90px !important;
+  width:auto;
+  opacity:0.98;
+  filter:brightness(1.1) contrast(1.1);
+  background:transparent;
+  box-shadow:none;
+  border:none;
+  display:block;
+}
+
+
+
+nav a:hover{
+  color:#4da3ff;
+}
+
+.hero {
+  width: 100%;
+  height: 80vh;
+  margin-top: 90px;
+
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('https://i.ibb.co/SwSJKCRY/singh-star-bg.jpg');
+
+  background-repeat: no-repeat;
+
+  /* 🔥 KEY FIX */
+  background-size: cover;
+
+  /* 🔥 BALANCED FOCUS ZONE */
+  background-position: center 40%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:0 20px;
+}
+
+.hero-content h1{
+  font-size:58px;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  font-size:20px;
+  max-width:750px;
+  margin:auto;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  background:#1f6feb;
+  color:white;
+  padding:15px 35px;
+  text-decoration:none;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#1355b8;
+  transform:translateY(-3px);
+}
+
+.section{
+  padding:100px 8%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section h2{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:40px;
+  color:#0b1f33;
+}
+
+.section p{
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+.dark{
+  background:#0b1f33;
+  color:white;
+}
+
+.dark h2{
+  color:white;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:white;
+  color:#222;
+  padding:35px;
+  border-radius:15px;
+  transition:0.4s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card h3{
+  margin-bottom:15px;
+  color:#1f6feb;
+}
+
+.fleet-box{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+
+.fleet-box div{
+  background:white;
+  padding:40px;
+  border-radius:15px;
+  min-width:220px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.fleet-box h3{
+  font-size:42px;
+  color:#1f6feb;
+}
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+  margin-top:50px;
+  align-items:start;
+}
+
+.contact-box{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.contact-box div{
+  background:white;
+  padding:35px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form{
+  margin-top:50px;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:16px;
+  border:1px solid #d0d7e2;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+}
+
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.contact-form button{
+  background:#1f6feb;
+  color:white;
+  border:none;
+  padding:16px;
+  border-radius:10px;
+  font-size:17px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact-form button:hover{
+  background:#1355b8;
+  transform:translateY(-2px);
+}
+
+footer{
+  background:#081522;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+#contact .contact-wrapper{
+  display: flex !important;
+  gap: 40px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+/* LEFT SIDE */
+#contact .contact-box{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* RIGHT SIDE */
+#contact .contact-form{
+  flex: 1;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BOXES */
+#contact .contact-box div{
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+@media(max-width:768px){
+
+
+ .hero{
+    height: 65vh;
+
+    background-size: cover;
+
+    /* ✅ prevents right-side awkward crop */
+    background-position: 60% center;
+  }
+
+ header{
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    height: auto;
+  }
+
+  .logo{
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+
+  nav a{
+    margin: 5px 10px;
+    font-size: 14px;
+  }  
+
+
+
+  
+  .hero-content h1{
+    font-size:38px;
+  }
+
+  .hero-content p{
+    font-size:17px;
+  }
+
+  .section h2{
+    font-size:32px;
+  }
+
+}
+
+  nav{
+    margin-top:15px;
+  }
+
+  nav a{
+    margin:0 10px;
+    font-size:14px;
+  }
+  
+  .hero{
+    background-position: center bottom;
+    height: 65vh;
+  }
+
+  .hero-content h1{
+    font-size:38px;
+  }
+
+  .hero-content p{
+    font-size:17px;
+  }
+
+  .section h2{
+    font-size:32px;
+  }
+  
+
+
+  .contact-wrapper{
+    flex-direction: column;
+  
+}
+  
+  
+}
+  </style>
+</head>
+
+<body>
+
+  <header style="height:90px !important;">
+    <div class="logo">
+      <img src="https://i.ibb.co/0RVBkxyf/singh-star-logitics-transparent-new.png" alt="singh-star-logitics-transparent-new" style="height:90px; width:auto; opacity:0.95; filter:brightness(1.05) contrast(1.05);">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Reliable Trucking Across Canada & USA</h1>
+
+      <p>
+        Professional Flatdeck, Dry Van & Reefer transportation services
+        with dependable delivery and modern logistics solutions.
+      </p>
+
+      <a href="#contact" class="btn">Get A Quote</a>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <div class="container">
+      <h2>About Us</h2>
+
+      <p>
+        Singh Star Logistics Ltd has proudly been serving customers since 2013,
+        providing trusted transportation solutions across Canada and the USA.
+      </p>
+
+      <p>
+        We specialize in Flatdeck, Dry Van, and Reefer services with a growing
+        fleet of 10 trucks and a team of 7 experienced professional drivers.
+      </p>
+
+      <p>
+        Our focus is safety, on-time delivery, customer satisfaction, and
+        reliable freight management for businesses of all sizes.
+      </p>
+    </div>
+  </section>
+
+  <section id="services" class="section dark fade-in">
+    <div class="container">
+      <h2>Our Services</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Flatdeck</h3>
+          <p>
+            Safe and efficient transportation for oversized and open-deck freight.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Dry Van</h3>
+          <p>
+            Reliable enclosed freight transportation across long distances.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reefer</h3>
+          <p>
+            Temperature-controlled shipping solutions for sensitive cargo.
+          </p>
+        </div>
+
+      </div>
+
+      </div>
+  </section>
+
+  <section id="fleet" class="section fade-in">
+    <div class="container">
+      <h2>Our Fleet</h2>
+
+    
+<div class="fleet-box">
+  <div>
+    <h3>8</h3>
+    <p>Trucks</p>
+  </div>
+
+  <div>
+    <h3>10</h3>
+    <p>Professional Drivers</p>
+  </div>
+
+  <div>
+    <h3>10</h3>
+    <p>Trailers</p>
+  </div>
+
+  <div>
+    <h3>2015</h3>
+    <p>Serving Since</p>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="section dark fade-in">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>On-Time Delivery</h3>
+          <p>
+            We value your deadlines and deliver freight efficiently.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Experienced Team</h3>
+          <p>
+            Skilled drivers and logistics professionals you can trust.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cross Border Service</h3>
+          <p>
+            Smooth transportation solutions throughout Canada and the USA.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+  <section id="contact" class="section contact fade-in">
+    <div class="container">
+
+      <h2>Contact Us</h2>
+
+   <div class="contact-wrapper">
+
+  <!-- LEFT SIDE -->
+  <div class="contact-box">
+
+    <div>
+      <h3>Email</h3>
+      <p>info@singhstarlogistics.ca</p>
+    </div>
+
+    <div>
+      <h3>Phone</h3>
+      <p>780-680-8425</p>
+    </div>
+
+    <div>
+      <h3>Address</h3>
+      <p>235132 84 St SE, Calgary, AB T1X 0K2</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="contact-form">
+    <form action="https://formsubmit.co/info@singhstarlogistics.ca" method="POST">
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Website Inquiry - Singh Star Logistics Ltd">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+
+      <textarea name="message" placeholder="Get in touch" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+  </div>
+
+</div>
+
+<div style="height:60px;"></div>
+
+<!-- FULL WIDTH MAP -->
+<div class="map-full">
+  <iframe
+    src="https://maps.google.com/maps?q=235132%2084%20St%20SE,%20Calgary,%20AB%20T1X%200K2&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+</div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Singh Star Logistics Ltd. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('show');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>
